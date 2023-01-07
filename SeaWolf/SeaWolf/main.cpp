@@ -89,16 +89,16 @@ GLfloat camera_pos_y = 30.0f;
 // Model matrix : an identity matrix (model will be at the origin)
 glm::mat4 model      = glm::mat4(1.0f);
 
-static float Scale_ship1 = 0.0f;
+static float pos_ship1 = 0.0f;
 // speed
 static float Delta_ship1 = 0.005f;
-static float Scale_ship2 = 0.0f;
+static float pos_ship2 = 0.0f;
 static float Delta_ship2 = 0.01f;
-static float Scale_fish = 0.0f;
+static float pos_fish = 0.0f;
 static float Delta_fish = -0.008f;
-static float Scale_player = 0.0f;
+static float pos_player = 0.0f;
 static float Delta_player = 1.0f;
-static float Scale_bullet = 10.0f;
+static float pos_bullet = 10.0f;
 static float Delta_bullet = 0.01f;
 static float Bullet_pos_z = 0.0f;
 bool has_bullet = false;
@@ -300,28 +300,27 @@ void generateObjectBufferMesh(ModelData mesh_data) {
 
 void check_collision() {
     // meet fish
-    if (Scale_bullet < 11.0f and Scale_bullet > 10.0f) {
-        if (Bullet_pos_z > Scale_fish-5.0f and Bullet_pos_z < Scale_fish+5.0f) {
+    if (pos_bullet < 11.0f and pos_bullet > 10.0f) {
+        if (Bullet_pos_z > pos_fish-5.0f and Bullet_pos_z < pos_fish+5.0f) {
             has_bullet = false;
         }
     }
     // meet ship2
-    if (Scale_bullet < 6.0f and Scale_bullet > 5.0f) {
-        if (Bullet_pos_z > Scale_ship2-3.0f and Bullet_pos_z < Scale_ship2+3.0f) {
+    if (pos_bullet < 6.0f and pos_bullet > 5.0f) {
+        if (Bullet_pos_z > pos_ship2-3.0f and Bullet_pos_z < pos_ship2+3.0f) {
             has_bullet = false;
-            Scale_ship2 = -29.0f;
+            pos_ship2 = -29.0f;
             score += 1;
         }
     }
     // meet ship1
-    if (Scale_bullet < 1.0f and Scale_bullet > 0.0f) {
-        if (Bullet_pos_z > Scale_ship1-3.0f and Bullet_pos_z < Scale_ship1+3.0f) {
+    if (pos_bullet < 1.0f and pos_bullet > 0.0f) {
+        if (Bullet_pos_z > pos_ship1-3.0f and Bullet_pos_z < pos_ship1+3.0f) {
             has_bullet = false;
-            Scale_ship1 = 29.0f;
+            pos_ship1 = 29.0f;
             score += 1;
         }
     }
-    //Bullet_pos_z;
 }
 
 void display() {
@@ -346,56 +345,56 @@ void display() {
     int matrix_location = glGetUniformLocation(shaderProgramID, "model");
     int view_mat_location = glGetUniformLocation(shaderProgramID, "view");
     int proj_mat_location = glGetUniformLocation(shaderProgramID, "proj");
-    int gTranslationLocation = glGetUniformLocation(shaderProgramID, "Translation");
+    int gTransformationLocation = glGetUniformLocation(shaderProgramID, "Translation");
     glUniformMatrix4fv(proj_mat_location, 1, GL_FALSE, &persp_proj[0][0]);
     glUniformMatrix4fv(view_mat_location, 1, GL_FALSE, &view[0][0]);
     glUniformMatrix4fv(matrix_location, 1, GL_FALSE, &model[0][0]);
     
-    Scale_ship1 += Delta_ship1;
-    if ((Scale_ship1 >= 30.0f) || (Scale_ship1 <= -30.0f)) {
+    pos_ship1 += Delta_ship1;
+    if ((pos_ship1 >= 30.0f) || (pos_ship1 <= -30.0f)) {
         Delta_ship1 *= -1.0f;
     }
-    glm::mat4 Translation(1.0f, 0.0f, 0.0f, 0.0f,
+    glm::mat4 Transformation(1.0f, 0.0f, 0.0f, 0.0f,
                           0.0f, 1.0f, 0.0f, 0.0f,
-                          0.0f, 0.0f, 1.0f, Scale_ship1,
+                          0.0f, 0.0f, 1.0f, pos_ship1,
                           0.0f, 0.0f, 0.0f, 1.0f);
     // update uniforms & draw
-    glUniformMatrix4fv(gTranslationLocation, 1, GL_TRUE, &Translation[0][0]);
+    glUniformMatrix4fv(gTransformationLocation, 1, GL_TRUE, &Transformation[0][0]);
     glUniform3f(model_color, 0.3f, 0.5f, 0.1f);
     glDrawArrays(GL_TRIANGLES, 0, mesh_ship.mPointCount);
     
-    Scale_ship2 += Delta_ship2;
-    if ((Scale_ship2 >= 30.0f) || (Scale_ship2 <= -30.0f)) {
+    pos_ship2 += Delta_ship2;
+    if ((pos_ship2 >= 30.0f) || (pos_ship2 <= -30.0f)) {
         Delta_ship2 *= -1.0f;
     }
-    glm::mat4 Translation2(1.0f, 0.0f, 0.0f, 5.0f,
+    glm::mat4 Transformation2(1.0f, 0.0f, 0.0f, 5.0f,
                            0.0f, 1.0f, 0.0f, 0.0f,
-                           0.0f, 0.0f, 1.0f, Scale_ship2,
+                           0.0f, 0.0f, 1.0f, pos_ship2,
                            0.0f, 0.0f, 0.0f, 1.0f);
-    glUniformMatrix4fv(gTranslationLocation, 1, GL_TRUE, &Translation2[0][0]);
+    glUniformMatrix4fv(gTransformationLocation, 1, GL_TRUE, &Transformation2[0][0]);
     glUniform3f(model_color, 0.8f, 0.06f, 0.46f);
     glDrawArrays(GL_TRIANGLES, 0, mesh_ship.mPointCount);
     
     // player
-    glm::mat4 Translation5(1.0f, 0.0f, 0.0f, 15.0f,
+    glm::mat4 Transformation5(1.0f, 0.0f, 0.0f, 15.0f,
                            0.0f, 1.0f, 0.0f, 0.0f,
-                           0.0f, 0.0f, 1.0f, Scale_player,
+                           0.0f, 0.0f, 1.0f, pos_player,
                            0.0f, 0.0f, 0.0f, 1.0f);
-    glUniformMatrix4fv(gTranslationLocation, 1, GL_TRUE, &Translation5[0][0]);
+    glUniformMatrix4fv(gTransformationLocation, 1, GL_TRUE, &Transformation5[0][0]);
     glUniform3f(model_color, 0.28f, 0.24f, 0.55f);
     glDrawArrays(GL_TRIANGLES, 0, mesh_ship.mPointCount);
     
     //draw the fish
-    Scale_fish += Delta_fish;
-    if ((Scale_fish >= 25.0f) || (Scale_fish <= -25.0f)) {
+    pos_fish += Delta_fish;
+    if ((pos_fish >= 25.0f) || (pos_fish <= -25.0f)) {
         Delta_fish *= -1.0f;
     }
     generateObjectBufferMesh(mesh_fish);
-    glm::mat4 Translation3(0.5f, 0.0f, 0.0f, 10.0f,
+    glm::mat4 Transformation3(0.5f, 0.0f, 0.0f, 10.0f,
                            0.0f, 0.5f, 0.0f, 0.0f,
-                           0.0f, 0.0f, 0.5f, Scale_fish,
+                           0.0f, 0.0f, 0.5f, pos_fish,
                            0.0f, 0.0f, 0.0f, 1.0f);
-    glUniformMatrix4fv(gTranslationLocation, 1, GL_TRUE, &Translation3[0][0]);
+    glUniformMatrix4fv(gTransformationLocation, 1, GL_TRUE, &Transformation3[0][0]);
     glUniform3f(model_color, 1.0f, 0.5f, 0.28f);
     glDrawArrays(GL_TRIANGLES, 0, mesh_fish.mPointCount);
     
@@ -403,11 +402,11 @@ void display() {
     pos0 = 40.0f;
     for (int i=0; i<score; i++) {
         generateObjectBufferMesh(mesh_data3);
-        glm::mat4 Translation4(2.0f, -1.0f, 0.0f, -40.0f,
+        glm::mat4 Transformation4(2.0f, -1.0f, 0.0f, -40.0f,
                                 0.0f, 3.0f, 0.0f, 0.0f,
                                 0.0f, -1.0f, 2.0f, pos0,
                                 0.0f, 0.0f, 0.0f, 2.0f);
-        glUniformMatrix4fv(gTranslationLocation, 1, GL_TRUE, &Translation4[0][0]);
+        glUniformMatrix4fv(gTransformationLocation, 1, GL_TRUE, &Transformation4[0][0]);
         glUniform3f(model_color, 1.0f, 0.0f, 0.0f);
         glDrawArrays(GL_TRIANGLES, 0, mesh_data3.mPointCount);
         pos0 -= 5.0f;
@@ -415,14 +414,14 @@ void display() {
     
     // bullet
     if (has_bullet) {
-        Scale_bullet -= Delta_bullet;
-        if (Scale_bullet < -3.0f) { has_bullet = false;}
+        pos_bullet -= Delta_bullet;
+        if (pos_bullet < -3.0f) { has_bullet = false;}
         generateObjectBufferMesh(mesh_bullet);
-        glm::mat4 Translation6(0.5f, 0.0f, 0.0f, Scale_bullet,
+        glm::mat4 Transformation6(0.5f, 0.0f, 0.0f, pos_bullet,
                                0.0f, 0.5f, 0.0f, 0.0f,
                                0.0f, 0.0f, 0.5f, Bullet_pos_z,
                                0.0f, 0.0f, 0.0f, 1.0f);
-        glUniformMatrix4fv(gTranslationLocation, 1, GL_TRUE, &Translation6[0][0]);
+        glUniformMatrix4fv(gTransformationLocation, 1, GL_TRUE, &Transformation6[0][0]);
         glUniform3f(model_color, 0.0f, 0.0f, 0.0f);
         glDrawArrays(GL_TRIANGLES, 0, mesh_bullet.mPointCount);
     }
@@ -460,23 +459,23 @@ void keypress(unsigned char key, int x, int y) {
     // change player ship position
     else if (key == 'a') {
         printf("GLUT_KEY_left");
-        Scale_player += Delta_player;
-        if ((Scale_player >= 25.0f) || (Scale_player <= -25.0f)) {
+        pos_player += Delta_player;
+        if ((pos_player >= 25.0f) || (pos_player <= -25.0f)) {
             Delta_player *= -1.0f;
         }
     }
     else if (key == 'd') {
         printf("GLUT_KEY_right");
-        Scale_player -= Delta_player;
-        if ((Scale_player >= 25.0f) || (Scale_player <= -25.0f)) {
+        pos_player -= Delta_player;
+        if ((pos_player >= 25.0f) || (pos_player <= -25.0f)) {
             Delta_player *= -1.0f;
         }
     }
     // shoot
     else if (key == 't') {
         has_bullet = true;
-        Bullet_pos_z = Scale_player;
-        Scale_bullet = 15.0f;
+        Bullet_pos_z = pos_player;
+        pos_bullet = 15.0f;
     }
 }
 
