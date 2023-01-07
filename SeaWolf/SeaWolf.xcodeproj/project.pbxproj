@@ -1,0 +1,425 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55ADCDC629182F36001CB703 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55ADCDC529182F36001CB703 /* main.cpp */; };
+		55ADCDD029183173001CB703 /* libGLEW.2.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 55ADCDCF29183173001CB703 /* libGLEW.2.2.0.dylib */; };
+		55ADCDD2291831A6001CB703 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 55ADCDD1291831A6001CB703 /* libglfw.3.3.dylib */; };
+		55ADCDD4291831CF001CB703 /* libglut.3.11.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 55ADCDD3291831CF001CB703 /* libglut.3.11.1.dylib */; };
+		55ADCDD52918343A001CB703 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55ADCDCD2918312E001CB703 /* OpenGL.framework */; };
+		55C82DB129293F4700EC18C0 /* libassimp.5.2.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C82DB029293F4700EC18C0 /* libassimp.5.2.4.dylib */; };
+		55C82EDC292B14E700EC18C0 /* maths_funcs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 55C82EDB292B14E700EC18C0 /* maths_funcs.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		55ADCDC029182F36001CB703 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		55C82D8E2923F0CC00EC18C0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		556CB1DB296793CB00D65802 /* Shark.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = Shark.dae; sourceTree = "<group>"; };
+		556CB1DC29679BD000D65802 /* bullet.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = bullet.dae; sourceTree = "<group>"; };
+		556CB1E42967D53E00D65802 /* watercraftPack_023.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = watercraftPack_023.obj; sourceTree = "<group>"; };
+		556CB1E52967D53E00D65802 /* watercraftPack_023.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = watercraftPack_023.mtl; sourceTree = "<group>"; };
+		556CB1E62967EAA500D65802 /* Heart.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = Heart.dae; sourceTree = "<group>"; };
+		55ADCDC229182F36001CB703 /* SeaWolf */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SeaWolf; sourceTree = BUILT_PRODUCTS_DIR; };
+		55ADCDC529182F36001CB703 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		55ADCDCD2918312E001CB703 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		55ADCDCF29183173001CB703 /* libGLEW.2.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.2.0.dylib; path = ../../../../../../opt/homebrew/Cellar/glew/2.2.0_1/lib/libGLEW.2.2.0.dylib; sourceTree = "<group>"; };
+		55ADCDD1291831A6001CB703 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../../opt/homebrew/Cellar/glfw/3.3.8/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
+		55ADCDD3291831CF001CB703 /* libglut.3.11.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglut.3.11.1.dylib; path = ../../../../../../opt/homebrew/Cellar/freeglut/3.2.2/lib/libglut.3.11.1.dylib; sourceTree = "<group>"; };
+		55C82D902923F0CC00EC18C0 /* move */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = move; sourceTree = BUILT_PRODUCTS_DIR; };
+		55C82DB029293F4700EC18C0 /* libassimp.5.2.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libassimp.5.2.4.dylib; path = ../../../../../../opt/homebrew/Cellar/assimp/5.2.5/lib/libassimp.5.2.4.dylib; sourceTree = "<group>"; };
+		55C82E19292AEE3D00EC18C0 /* fsShader.fs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = fsShader.fs; sourceTree = "<group>"; };
+		55C82E1A292AEE3D00EC18C0 /* vsShader.vs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = vsShader.vs; sourceTree = "<group>"; };
+		55C82EDA292B14E700EC18C0 /* maths_funcs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maths_funcs.h; sourceTree = "<group>"; };
+		55C82EDB292B14E700EC18C0 /* maths_funcs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = maths_funcs.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55ADCDBF29182F36001CB703 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55C82DB129293F4700EC18C0 /* libassimp.5.2.4.dylib in Frameworks */,
+				55ADCDD4291831CF001CB703 /* libglut.3.11.1.dylib in Frameworks */,
+				55ADCDD52918343A001CB703 /* OpenGL.framework in Frameworks */,
+				55ADCDD2291831A6001CB703 /* libglfw.3.3.dylib in Frameworks */,
+				55ADCDD029183173001CB703 /* libGLEW.2.2.0.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55C82D8D2923F0CC00EC18C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55ADCDB929182F36001CB703 = {
+			isa = PBXGroup;
+			children = (
+				55ADCDC429182F36001CB703 /* SeaWolf */,
+				55ADCDC329182F36001CB703 /* Products */,
+				55ADCDCC2918312E001CB703 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		55ADCDC329182F36001CB703 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55ADCDC229182F36001CB703 /* SeaWolf */,
+				55C82D902923F0CC00EC18C0 /* move */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55ADCDC429182F36001CB703 /* SeaWolf */ = {
+			isa = PBXGroup;
+			children = (
+				55ADCDC529182F36001CB703 /* main.cpp */,
+				556CB1E62967EAA500D65802 /* Heart.dae */,
+				556CB1E52967D53E00D65802 /* watercraftPack_023.mtl */,
+				556CB1E42967D53E00D65802 /* watercraftPack_023.obj */,
+				556CB1DC29679BD000D65802 /* bullet.dae */,
+				55C82E19292AEE3D00EC18C0 /* fsShader.fs */,
+				55C82E1A292AEE3D00EC18C0 /* vsShader.vs */,
+				55C82EDB292B14E700EC18C0 /* maths_funcs.cpp */,
+				55C82EDA292B14E700EC18C0 /* maths_funcs.h */,
+				556CB1DB296793CB00D65802 /* Shark.dae */,
+			);
+			path = SeaWolf;
+			sourceTree = "<group>";
+		};
+		55ADCDCC2918312E001CB703 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55C82DB029293F4700EC18C0 /* libassimp.5.2.4.dylib */,
+				55ADCDD3291831CF001CB703 /* libglut.3.11.1.dylib */,
+				55ADCDD1291831A6001CB703 /* libglfw.3.3.dylib */,
+				55ADCDCF29183173001CB703 /* libGLEW.2.2.0.dylib */,
+				55ADCDCD2918312E001CB703 /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55ADCDC129182F36001CB703 /* SeaWolf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55ADCDC929182F36001CB703 /* Build configuration list for PBXNativeTarget "SeaWolf" */;
+			buildPhases = (
+				55ADCDBE29182F36001CB703 /* Sources */,
+				55ADCDBF29182F36001CB703 /* Frameworks */,
+				55ADCDC029182F36001CB703 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SeaWolf;
+			productName = SeaWolf;
+			productReference = 55ADCDC229182F36001CB703 /* SeaWolf */;
+			productType = "com.apple.product-type.tool";
+		};
+		55C82D8F2923F0CC00EC18C0 /* move */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55C82D962923F0CC00EC18C0 /* Build configuration list for PBXNativeTarget "move" */;
+			buildPhases = (
+				55C82D8C2923F0CC00EC18C0 /* Sources */,
+				55C82D8D2923F0CC00EC18C0 /* Frameworks */,
+				55C82D8E2923F0CC00EC18C0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = move;
+			productName = move;
+			productReference = 55C82D902923F0CC00EC18C0 /* move */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55ADCDBA29182F36001CB703 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					55ADCDC129182F36001CB703 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					55C82D8F2923F0CC00EC18C0 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 55ADCDBD29182F36001CB703 /* Build configuration list for PBXProject "SeaWolf" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55ADCDB929182F36001CB703;
+			productRefGroup = 55ADCDC329182F36001CB703 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55ADCDC129182F36001CB703 /* SeaWolf */,
+				55C82D8F2923F0CC00EC18C0 /* move */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55ADCDBE29182F36001CB703 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55ADCDC629182F36001CB703 /* main.cpp in Sources */,
+				55C82EDC292B14E700EC18C0 /* maths_funcs.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55C82D8C2923F0CC00EC18C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		55ADCDC729182F36001CB703 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		55ADCDC829182F36001CB703 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		55ADCDCA29182F36001CB703 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/opt/homebrew/Cellar/glfw/3.3.8/include,
+					/opt/homebrew/Cellar/glew/2.2.0_1/include,
+					/opt/homebrew/Cellar/freeglut/3.2.2/include,
+					/opt/homebrew/Cellar/glm/0.9.9.8/include,
+					/opt/homebrew/Cellar/assimp/5.2.5/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/opt/homebrew/Cellar/glfw/3.3.8/lib,
+					/opt/homebrew/Cellar/glew/2.2.0_1/lib,
+					/opt/homebrew/Cellar/freeglut/3.2.2/lib,
+					/opt/homebrew/Cellar/glm/0.9.9.8/lib,
+					/opt/homebrew/Cellar/assimp/5.2.5/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		55ADCDCB29182F36001CB703 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/opt/homebrew/Cellar/glfw/3.3.8/include,
+					/opt/homebrew/Cellar/glew/2.2.0_1/include,
+					/opt/homebrew/Cellar/freeglut/3.2.2/include,
+					/opt/homebrew/Cellar/glm/0.9.9.8/include,
+					/opt/homebrew/Cellar/assimp/5.2.5/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/opt/homebrew/Cellar/glfw/3.3.8/lib,
+					/opt/homebrew/Cellar/glew/2.2.0_1/lib,
+					/opt/homebrew/Cellar/freeglut/3.2.2/lib,
+					/opt/homebrew/Cellar/glm/0.9.9.8/lib,
+					/opt/homebrew/Cellar/assimp/5.2.5/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		55C82D942923F0CC00EC18C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		55C82D952923F0CC00EC18C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55ADCDBD29182F36001CB703 /* Build configuration list for PBXProject "SeaWolf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55ADCDC729182F36001CB703 /* Debug */,
+				55ADCDC829182F36001CB703 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55ADCDC929182F36001CB703 /* Build configuration list for PBXNativeTarget "SeaWolf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55ADCDCA29182F36001CB703 /* Debug */,
+				55ADCDCB29182F36001CB703 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55C82D962923F0CC00EC18C0 /* Build configuration list for PBXNativeTarget "move" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55C82D942923F0CC00EC18C0 /* Debug */,
+				55C82D952923F0CC00EC18C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55ADCDBA29182F36001CB703 /* Project object */;
+}
